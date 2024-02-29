@@ -13,7 +13,7 @@ Write your "About" section here.
 Write your "Contact" section here.
 - LinkedIn: https://linkedin.com/in/username
 - GitHub: https://github.com/username
-- Email: username@gmail.com
+- Email: ugritchaichana13@gmail.com
 
 ## Logo
 - UGRIT
