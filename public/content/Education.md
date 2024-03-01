@@ -1,4 +1,4 @@
-## Company 1
+## Academy 1
 - *Role* | Jan'23 - Feb'23
 - ![logo512](../assets/KMUTNB.png)
 - Tags: Category 1
@@ -8,7 +8,7 @@
   - Point 1
   - Point 2
 
-## Company 2
+## Academy 2
 - *Role* | Feb'23 - Mar'23
 - ![logo512](../assets/logo512.png)
 - Tags: Category 2
@@ -18,7 +18,7 @@
   - Point 1
   - Point 2
 
-## Company 3
+## Academy 3
 - *Role* | Mar'23 - Apr'23
 - ![logo512](../assets/logo512.png)
 - Tags: Category 3

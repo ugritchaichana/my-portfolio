@@ -1,129 +1,73 @@
-import {
-  Divider,
-  Stack,
-  Text,
-  Container,
-  Box,
-  HStack,
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Flex,
-  Badge,
-  Image,
-  List,
-  ListItem,
-  ListIcon,
-  Button,
-  ButtonGroup,
-  Center,
-} from "@chakra-ui/react";
-import { ChevronRightIcon } from "@chakra-ui/icons";
-import { Fade } from "react-reveal";
 import { useState, useEffect } from "react";
-import EducationArray from "./EducationArray";
-import TagsArray from "./TagsArray";
 
-export default function Education({ color }) {
-  const education = EducationArray();
-  const options = TagsArray("EducationTags");
-  const [selected, setSelected] = useState("");
+const parseEducation = (mdContent) => {
+  const education = [];
+  const lines = mdContent.split("\n");
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+
+    if (line.startsWith("## ")) {
+      const company = line.substr(3).trim();
+      const positionLine = lines[++i]
+        .substr(2)
+        .split("|")
+        .map((s) => s.trim());
+      const position = positionLine[0].slice(1, -1);
+      const duration = positionLine[1].trim();
+      const imageLine = lines[++i];
+      const image = imageLine.match(/!\[(.*)\]\((.*)\)/)[2];
+      const tags = lines[++i].split(":")[1].trim();
+      const badges = [];
+      const listItems = [];
+
+      while (lines[++i] && !lines[i].startsWith("- Badges:")) {}
+      while (lines[++i] && lines[i].startsWith("  - ")) {
+        const badgeLine = lines[i].substr(4).split("[");
+        const badgeName = badgeLine[0].trim();
+        const badgeColor = badgeLine[1].split("]")[0].trim();
+        badges.push({ name: badgeName, colorScheme: badgeColor });
+      }
+
+      while (lines[++i] && lines[i].startsWith("  - ")) {
+        listItems.push(lines[i].substr(4));
+      }
+
+      education.push({
+        image,
+        company,
+        position,
+        duration,
+        badges,
+        listItems,
+        tags,
+      });
+    }
+  }
+
+  return education;
+};
+
+const EducationArray = () => {
+  const [education, setEducation] = useState([]);
 
   useEffect(() => {
-    if (options.length > 0) {
-      setSelected(options[0].value);
-    }
-  }, [options]);
-  
-  const handleSelected = (value) => {
-    setSelected(value);
-  };
+    fetch("/content/Education.md")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch markdown content");
+        }
+        return response.text();
+      })
+      .then((mdContent) => {
+        setEducation(parseEducation(mdContent));
+      })
+      .catch((error) => {
+        console.error("Error fetching markdown content:", error);
+      });
+  }, []);
 
-  return (
-    <>
-      <Container maxW={"3xl"} id="education">
-        <Stack
-          as={Box}
-          textAlign={"center"}
-          spacing={{ base: 8, md: 14 }}
-          pb={{ base: 20, md: 36 }}
-        >
-          <Stack align="center" direction="row" px={4}>
-            <HStack mx={4}>
-              <Text color={`${color}.400`} fontWeight={800}>
-                03
-              </Text>
-              <Text fontWeight={800}>Education</Text>
-            </HStack>
-            <Divider orientation="horizontal" />
-          </Stack>
-          <Center px={4}>
-            <ButtonGroup variant="outline">
-              {options.map((option) => (
-                <Button
-                  colorScheme={selected === option.value ? `${color}` : "gray"}
-                  onClick={() => handleSelected(option.value)}
-                >
-                  {option.value}
-                </Button>
-              ))}
-            </ButtonGroup>
-          </Center>
-          <Stack px={4} spacing={4}>
-            {education
-              .filter((exp) => exp.tags.includes(selected))
-              .map((exp) => (
-                <Fade bottom>
-                  <Card key={exp.company} size="sm">
-                    <CardHeader>
-                      <Flex justifyContent="space-between">
-                        <HStack>
-                          <Image src={exp.image} h={50} />
-                          <Box px={2} align="left">
-                            <Text fontWeight={600}>{exp.company}</Text>
-                            <Text>{exp.position}</Text>
-                          </Box>
-                        </HStack>
-                        <Text px={2} fontWeight={300}>
-                          {exp.duration}
-                        </Text>
-                      </Flex>
-                    </CardHeader>
-                    <CardBody>
-                      <Flex>
-                        <List align="left" spacing={3}>
-                          {exp.listItems.map((item, index) => (
-                            <ListItem key={index}>
-                              <ListIcon
-                                boxSize={6}
-                                as={ChevronRightIcon}
-                                color={`${color}.500`}
-                              />
-                              {item}
-                            </ListItem>
-                          ))}
-                        </List>
-                      </Flex>
-                    </CardBody>
-                    <CardFooter>
-                      <HStack spacing={2}>
-                        {exp.badges.map((badge) => (
-                          <Badge
-                            key={badge.name}
-                            colorScheme={badge.colorScheme}
-                          >
-                            {badge.name}
-                          </Badge>
-                        ))}
-                      </HStack>
-                    </CardFooter>
-                  </Card>
-                </Fade>
-              ))}
-          </Stack>
-        </Stack>
-      </Container>
-    </>
-  );
-}
+  return education;
+};
+
+export default EducationArray;
