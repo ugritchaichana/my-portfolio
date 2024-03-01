@@ -11,7 +11,7 @@ Driven by a passion for technology, I am a highly motivated and creative individ
 
 ## Contact
 
-- LinkedIn: linkedin.com/in/ugrit-chaichana-booth13092001
+- LinkedIn: https://www.linkedin.com/in/ugrit-chaichana-booth13092001
 - GitHub: https://github.com/Boothza001
 - Email: ugritchaichana13@gmail.com
 - Tel: +66 63 6375191

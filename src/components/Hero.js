@@ -24,6 +24,9 @@ export default function Header({ color }) {
                 "noreferrer,noopener"
               );
   };
+  const resume_dl = () => {
+    window.location.href = `https://drive.google.com/uc?export=download&id=1B_iwvXxa78dCGKupXKJKQ88q5TaBdSAg`;
+  };
   return (
     <>
       <Heading>
@@ -72,7 +75,7 @@ export default function Header({ color }) {
               _hover={{
                 bg: `${color}.500`,
               }}
-              href={() => window.location.href = "https://drive.google.com/uc?export=download&id=1B_iwvXxa78dCGKupXKJKQ88q5TaBdSAg"}
+              onClick={resume_dl}
             >
               Resume !!
             </Button>
