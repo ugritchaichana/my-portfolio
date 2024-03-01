@@ -22,12 +22,14 @@ import {
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { Fade } from "react-reveal";
 import { useState, useEffect } from "react";
-import ExperienceArray from "./ExperienceArray";
+import EducationArray from "./EducationArray";
 import TagsArray from "./TagsArray";
+import KMUTNB_LOGO from "../logo_kmutnb.png";
+import TNC_LOGO from "../logo_technic.png";
 
-export default function Experience({ color }) {
-  const experience = ExperienceArray();
-  const options = TagsArray("ExperienceTags");
+export default function Education({ color }) {
+  const education = EducationArray();
+  const options = TagsArray("EducationTags");
   const [selected, setSelected] = useState("");
 
   useEffect(() => {
@@ -42,7 +44,7 @@ export default function Experience({ color }) {
 
   return (
     <>
-      <Container maxW={"3xl"} id="experience">
+      <Container maxW={"3xl"} id="education">
         <Stack
           as={Box}
           textAlign={"center"}
@@ -52,13 +54,13 @@ export default function Experience({ color }) {
           <Stack align="center" direction="row" px={4}>
             <HStack mx={4}>
               <Text color={`${color}.400`} fontWeight={800}>
-                03
+                02
               </Text>
-              <Text fontWeight={800}>Experience</Text>
+              <Text fontWeight={800}>Education</Text>
             </HStack>
             <Divider orientation="horizontal" />
           </Stack>
-          <Center px={4}>
+          {/* <Center px={4}>
             <ButtonGroup variant="outline">
               {options.map((option) => (
                 <Button
@@ -69,28 +71,51 @@ export default function Experience({ color }) {
                 </Button>
               ))}
             </ButtonGroup>
-          </Center>
+          </Center> */}
           <Stack px={4} spacing={4}>
-            {experience
+            {education
               .filter((exp) => exp.tags.includes(selected))
               .map((exp) => (
                 <Fade bottom>
+                  <>
                   <Card key={exp.company} size="sm">
                     <CardHeader>
                       <Flex justifyContent="space-between">
                         <HStack>
-                          <Image src={exp.image} h={50} />
+                          <Image src={KMUTNB_LOGO} h={59} />
                           <Box px={2} align="left">
-                            <Text fontWeight={600}>{exp.company}</Text>
+                            <Text fontWeight={600}>{"King Monkut's Unversity of Technology"}</Text>
+                            <Text fontWeight={600}>{"North Bangkok"}</Text>
                             <Text>{exp.position}</Text>
+                            <Badge variant='solid' colorScheme='green'>Bachelor</Badge>
                           </Box>
                         </HStack>
                         <Text px={2} fontWeight={300}>
-                          {exp.duration}
+                          {"2022 - Present"}
                         </Text>
                       </Flex>
                     </CardHeader>
-                    <CardBody>
+                    </Card>
+                    <br />
+                    <Card key={exp.company} size="sm">
+                    <CardHeader>
+                      <Flex justifyContent="space-between">
+                        <HStack>
+                          <Image src={TNC_LOGO} h={59} />
+                          <Box px={2} align="left">
+                            <Text fontWeight={600}>{"Chanthaburi Technical College"}</Text>
+                            <Text>{"Technology Computer"}</Text>
+                            <Badge variant='solid' colorScheme='green'>Voc. Cert.</Badge>&nbsp;
+                            <Badge variant='solid' colorScheme='green'>High Voc. Cert.</Badge>&nbsp;
+                          </Box>
+                        </HStack>
+                        <Text px={2} fontWeight={300}>
+                          {"2017 - 2022"}
+                        </Text>
+                      </Flex>
+                    </CardHeader>
+                    </Card>
+                    {/* <CardBody>
                       <Flex>
                         <List align="left" spacing={3}>
                           {exp.listItems.map((item, index) => (
@@ -105,8 +130,8 @@ export default function Experience({ color }) {
                           ))}
                         </List>
                       </Flex>
-                    </CardBody>
-                    <CardFooter>
+                    </CardBody> */}
+                    {/* <CardFooter>
                       <HStack spacing={2}>
                         {exp.badges.map((badge) => (
                           <Badge
@@ -117,8 +142,9 @@ export default function Experience({ color }) {
                           </Badge>
                         ))}
                       </HStack>
-                    </CardFooter>
-                  </Card>
+                    </CardFooter> */}
+                  
+                  </>
                 </Fade>
               ))}
           </Stack>
