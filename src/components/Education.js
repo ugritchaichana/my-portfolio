@@ -7,19 +7,10 @@ import {
   HStack,
   Card,
   CardHeader,
-  CardBody,
-  CardFooter,
   Flex,
   Badge,
   Image,
-  List,
-  ListItem,
-  ListIcon,
-  Button,
-  ButtonGroup,
-  Center,
 } from "@chakra-ui/react";
-import { ChevronRightIcon } from "@chakra-ui/icons";
 import { Fade } from "react-reveal";
 import { useState, useEffect } from "react";
 import EducationArray from "./EducationArray";
@@ -60,18 +51,6 @@ export default function Education({ color }) {
             </HStack>
             <Divider orientation="horizontal" />
           </Stack>
-          {/* <Center px={4}>
-            <ButtonGroup variant="outline">
-              {options.map((option) => (
-                <Button
-                  colorScheme={selected === option.value ? `${color}` : "gray"}
-                  onClick={() => handleSelected(option.value)}
-                >
-                  {option.value}
-                </Button>
-              ))}
-            </ButtonGroup>
-          </Center> */}
           <Stack px={4} spacing={4}>
             {education
               .filter((exp) => exp.tags.includes(selected))
@@ -115,35 +94,6 @@ export default function Education({ color }) {
                       </Flex>
                     </CardHeader>
                     </Card>
-                    {/* <CardBody>
-                      <Flex>
-                        <List align="left" spacing={3}>
-                          {exp.listItems.map((item, index) => (
-                            <ListItem key={index}>
-                              <ListIcon
-                                boxSize={6}
-                                as={ChevronRightIcon}
-                                color={`${color}.500`}
-                              />
-                              {item}
-                            </ListItem>
-                          ))}
-                        </List>
-                      </Flex>
-                    </CardBody> */}
-                    {/* <CardFooter>
-                      <HStack spacing={2}>
-                        {exp.badges.map((badge) => (
-                          <Badge
-                            key={badge.name}
-                            colorScheme={badge.colorScheme}
-                          >
-                            {badge.name}
-                          </Badge>
-                        ))}
-                      </HStack>
-                    </CardFooter> */}
-                  
                   </>
                 </Fade>
               ))}

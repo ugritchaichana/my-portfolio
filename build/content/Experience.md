@@ -1,29 +1,30 @@
-## Company 1
-- *Role* | Jan'23 - Feb'23
-- ![logo512](../assets/logo512.png)
-- Tags: Category 1
+## Maintenance Technician
+- *SNC Former PCL (Internship)* | February 2021 - March 2021
+- ![logo512](../assets/SNC_logo.png)
+- Tags: Maintenance Technician
 - Badges:
-  - Badge [blue]
+  - Rayong [blue]
 - List Items:
-  - Point 1
-  - Point 2
+  - Assistant Production Engineer
+  - Production Line Worker
 
-## Company 2
-- *Role* | Feb'23 - Mar'23
-- ![logo512](../assets/logo512.png)
-- Tags: Category 2
+## IT Support
+- *Chanthaburi Technical Collage (Internship)* | June 2021 - July 2021
+- ![logo512](../assets/logo_technic.png)
+- Tags: IT Support
 - Badges:
-  - Badge [blue]
+  - Chanthaburi [yellow]
 - List Items:
-  - Point 1
-  - Point 2
+  - Network Administrator
+  - Maintenance Technician
+  
 
-## Company 3
-- *Role* | Mar'23 - Apr'23
-- ![logo512](../assets/logo512.png)
-- Tags: Category 3
+## Computer Technician
+- *Advice IT Chanthaburi (Internship)* | September 2018 - April 2019
+- ![logo512](../assets/Advice_logo.png)
+- Tags: Computer Technician
 - Badges:
-  - Badge [blue]
+  - Chanthaburi [yellow]
 - List Items:
-  - Point 1
-  - Point 2
+  - Computer Technician
+  - Salesman
