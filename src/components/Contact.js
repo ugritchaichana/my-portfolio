@@ -48,6 +48,10 @@ export default function Contact({ color }) {
             <Text color={`${color}.500`} fontWeight={600} fontSize={"lg"} px={4}>
               {profile.email}
             </Text>
+            <Text color={`${color}.500`} fontWeight={600} fontSize={"lg"} px={4}>
+              {profile.tel}
+            </Text>
+                        
             <Center>
               <HStack pt={4} spacing={4}>
                 <FaLinkedin onClick={linkedin} size={28} />

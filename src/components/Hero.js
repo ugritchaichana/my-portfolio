@@ -72,9 +72,9 @@ export default function Header({ color }) {
               _hover={{
                 bg: `${color}.500`,
               }}
-              onClick={linkedin}
+              href={() => window.location.href = "https://drive.google.com/uc?export=download&id=1B_iwvXxa78dCGKupXKJKQ88q5TaBdSAg"}
             >
-              Let's connect!
+              Resume !!
             </Button>
             <Button
               variant={"link"}
@@ -91,14 +91,14 @@ export default function Header({ color }) {
                 w={71}
                 position={"absolute"}
                 right={-71}
-                top={"10px"}
+                top={"20px"}
               />
               <Text
                 fontSize={"lg"}
                 fontFamily={"Caveat"}
                 position={"absolute"}
                 right={"-85px"}
-                top={"-15px"}
+                top={"-5px"}
                 transform={"rotate(10deg)"}
               >
                 Click me!
