@@ -1,6 +1,6 @@
-## Company 1
-- *Role* | Jan'23 - Feb'23
-- ![logo512](../assets/logo512.png)
+## KING MONGKUT'S UNIVERSITY OF TECHNOLOGY NORTH BANGKOK (KMUTNB)
+- *Electronics Computer Technology* | Jan'23 - Feb'23
+- ![logo512](../assets/KMUTNB.png)
 - Tags: Category 1
 - Badges:
   - Badge [blue]
