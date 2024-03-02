@@ -36,7 +36,7 @@ export default function Nav({ color }) {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const [isLargerThanMD] = useMediaQuery("(min-width: 48em)");
+  const [isLargerThanMD] = useMediaQuery("(min-width: 40em)");
   const scrollToHero = () => {
   const heroSection = document.querySelector("#hero");
     heroSection.scrollIntoView({ behavior: "smooth" });
@@ -44,6 +44,10 @@ export default function Nav({ color }) {
   const scrollToAbout = () => {
     const aboutSection = document.querySelector("#about");
     aboutSection.scrollIntoView({ behavior: "smooth" });
+  };
+  const scrollToEducation = () => {
+    const educationSection = document.querySelector("#education");
+    educationSection.scrollIntoView({ behavior: "smooth" });
   };
   const scrollToExperience = () => {
     const experienceSection = document.querySelector("#experience");
@@ -101,6 +105,9 @@ export default function Nav({ color }) {
                 <Button variant="ghost" onClick={scrollToAbout}>
                   About
                 </Button>
+                <Button variant="ghost" onClick={scrollToEducation}>
+                  Education
+                </Button>
                 <Button variant="ghost" onClick={scrollToExperience}>
                   Experience
                 </Button>
@@ -133,6 +140,9 @@ export default function Nav({ color }) {
                     <DrawerBody>
                       <Button variant="ghost" onClick={scrollToAbout}>
                         About
+                      </Button>
+                      <Button variant="ghost" onClick={scrollToEducation}>
+                        Education
                       </Button>
                       <Button variant="ghost" onClick={scrollToExperience}>
                         Experience
