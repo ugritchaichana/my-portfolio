@@ -8,24 +8,24 @@ import {
   Icon,
   useColorModeValue,
   createIcon,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+  Image,
 } from "@chakra-ui/react";
 import ProfileArray from "./ProfileArray";
+import imgResume from "./img/Ugrit_Resume.png";
 
 export default function Header({ color }) {
   const profile = ProfileArray();
   const scrollToContact = () => {
     const contactSection = document.querySelector("#contact");
     contactSection.scrollIntoView({ behavior: "smooth" });
-  };
-  const linkedin = () => {
-    window.open(
-                `${profile.linkedin}`,
-                "_blank",
-                "noreferrer,noopener"
-              );
-  };
-  const resume_dl = () => {
-    window.location.href = `https://drive.google.com/uc?export=download&id=1B_iwvXxa78dCGKupXKJKQ88q5TaBdSAg`;
   };
   return (
     <>
@@ -67,18 +67,7 @@ export default function Header({ color }) {
             alignSelf={"center"}
             position={"relative"}
           >
-            <Button
-              colorScheme={color}
-              bg={`${color}.400`}
-              rounded={"full"}
-              px={6}
-              _hover={{
-                bg: `${color}.500`,
-              }}
-              onClick={resume_dl}
-            >
-              Resume !!
-            </Button>
+            <ModalResume />
             <Button
               variant={"link"}
               colorScheme={"blue"}
@@ -126,3 +115,31 @@ const Arrow = createIcon({
     />
   ),
 });
+
+function ModalResume() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const resume_dl = () => {
+    window.location.href = `https://drive.google.com/uc?export=download&id=1B_iwvXxa78dCGKupXKJKQ88q5TaBdSAg`;
+  };
+  return (
+    <>
+      <Button onClick={onOpen}>Resume</Button>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent w="500px">
+          <ModalHeader>Resume</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody></ModalBody>
+          <Box>
+            <Image src={imgResume} maxW="100%" />
+          </Box>
+          <ModalFooter>
+            <Button colorScheme="blue" mr={3} onClick={resume_dl}>
+              Download
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
+  );
+}
