@@ -54,8 +54,8 @@ export default function Education({ color }) {
           <Stack px={4} spacing={4}>
             {education
               .filter((exp) => exp.tags.includes(selected))
-              .map((exp) => (
-                <Fade bottom>
+              .map((exp,i) => (
+                <Fade bottom key={i+1}>
                   <>
                   <Card key={exp.company} size="sm">
                     <CardHeader>
@@ -63,14 +63,14 @@ export default function Education({ color }) {
                         <HStack>
                           <Image src={KMUTNB_LOGO} h={59} />
                           <Box px={2} align="left">
-                            <Text fontWeight={600}>{"King Monkut's Unversity of Technology"}</Text>
-                            <Text fontWeight={600}>{"North Bangkok"}</Text>
-                            <Text>{exp.position}</Text>
+                            <Text fontWeight={600}>King Monkut's Unversity of Technology</Text>
+                            <Text fontWeight={600}>North Bangkok</Text>
+                            <Text>Electronics Computer Technology</Text>
                             <Badge variant='solid' colorScheme='green'>Bachelor</Badge>
                           </Box>
                         </HStack>
                         <Text px={2} fontWeight={300}>
-                          {"2022 - Present"}
+                          2022 - Present
                         </Text>
                       </Flex>
                     </CardHeader>

@@ -60,8 +60,9 @@ export default function Experience({ color }) {
           </Stack>
           <Center px={4}>
             <ButtonGroup variant="outline">
-              {options.map((option) => (
+              {options.map((option,i) => (
                 <Button
+                  key={i+1}
                   colorScheme={selected === option.value ? `${color}` : "gray"}
                   onClick={() => handleSelected(option.value)}
                 >
@@ -73,8 +74,8 @@ export default function Experience({ color }) {
           <Stack px={4} spacing={4}>
             {experience
               .filter((exp) => exp.tags.includes(selected))
-              .map((exp) => (
-                <Fade bottom>
+              .map((exp,i) => (
+                <Fade bottom key={i+1}>
                   <Card key={exp.company} size="sm">
                     <CardHeader>
                       <Flex justifyContent="space-between">
@@ -108,9 +109,9 @@ export default function Experience({ color }) {
                     </CardBody>
                     <CardFooter>
                       <HStack spacing={2}>
-                        {exp.badges.map((badge) => (
+                        {exp.badges.map((badge,i) => (
                           <Badge
-                            key={badge.name}
+                            key={i+1}
                             colorScheme={badge.colorScheme}
                           >
                             {badge.name}

@@ -52,10 +52,9 @@ export default function Projects({ color }) {
             <Divider orientation="horizontal" />
           </Stack>
           <Stack px={4} spacing={4}>
-            {projects.map((project) => (
-              <Fade bottom>
+            {projects.map((project,i) => (
+              <Fade bottom key={i+1}>
                 <Card
-                  key={project.name}
                   direction={{
                     base: "column",
                   }}
@@ -70,8 +69,8 @@ export default function Projects({ color }) {
                       <Text py={2}>{project.description}</Text>
 
                       <HStack py={2}>
-                        {project.buttons.map((button) => (
-                          <a key={button.text} href={button.href}>
+                        {project.buttons.map((button,i) => (
+                          <a key={i+1} href={button.href}>
                             <Button color={`${color}.400`}>
                               {button.text}
                             </Button>
@@ -79,9 +78,9 @@ export default function Projects({ color }) {
                         ))}
                       </HStack>
                       <HStack pt={4} spacing={2}>
-                        {project.badges.map((badge) => (
+                        {project.badges.map((badge,i) => (
                           <Badge
-                            key={badge.text}
+                            key={i+1}
                             colorScheme={badge.colorScheme}
                           >
                             {badge.text}
@@ -105,8 +104,9 @@ export default function Projects({ color }) {
               >
                 All
               </Button>
-              {options.map((option) => (
+              {options.map((option,i) => (
                 <Button
+                  key={i+1}
                   colorScheme={selected === option.value ? `${color}` : "gray"}
                   onClick={() => handleSelected(option.value)}
                 >
@@ -124,9 +124,9 @@ export default function Projects({ color }) {
                   return other.tags.includes(selected);
                 }
               })
-              .map((other) => (
-                <Fade bottom>
-                  <Card key={other.name}>
+              .map((other,i) => (
+                <Fade bottom key={i+1}>
+                  <Card>
                     <Stack>
                       <CardBody align="left" h={[null, "40vh"]}>
                         <Heading size="sm">{other.name}</Heading>
@@ -136,9 +136,9 @@ export default function Projects({ color }) {
                         </Text>
 
                         <HStack spacing={2}>
-                          {other.buttons.map((button) => (
+                          {other.buttons.map((button,i) => (
                             <Link
-                              key={button.text}
+                              key={i+1}
                               href={button.href}
                               color={`${color}.400`}
                             >
@@ -147,10 +147,10 @@ export default function Projects({ color }) {
                           ))}
                         </HStack>
                         <HStack flexWrap="wrap" pt={4} spacing={2}>
-                          {other.badges.map((badge) => (
+                          {other.badges.map((badge,i) => (
                             <Badge
                               my={2}
-                              key={badge.text}
+                              key={i+1}
                               colorScheme={badge.colorScheme}
                             >
                               {badge.text}
