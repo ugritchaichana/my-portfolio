@@ -55,9 +55,9 @@ export default function Education({ color }) {
             {education
               .filter((exp) => exp.tags.includes(selected))
               .map((exp,i) => (
-                <Fade bottom key={i+1}>
+                <Fade bottom key={exp.company}>
                   <>
-                  <Card key={exp.company} size="sm">
+                  <Card size="sm">
                     <CardHeader>
                       <Flex justifyContent="space-between">
                         <HStack>
@@ -76,7 +76,7 @@ export default function Education({ color }) {
                     </CardHeader>
                     </Card>
                     <br />
-                    <Card key={exp.company} size="sm">
+                    <Card size="sm">
                     <CardHeader>
                       <Flex justifyContent="space-between">
                         <HStack>
