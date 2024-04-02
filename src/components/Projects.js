@@ -93,7 +93,7 @@ export default function Projects({ color }) {
               </Fade>
             ))}
           </Stack>
-          <Text color={"gray.600"} fontSize={"xl"} px={4}>
+          {/* <Text color={"gray.600"} fontSize={"xl"} px={4}>
             Other Projects
           </Text>
           <Center px={4}>
@@ -114,8 +114,8 @@ export default function Projects({ color }) {
                 </Button>
               ))}
             </ButtonGroup>
-          </Center>
-          <SimpleGrid columns={[1, 2, 3]} px={4} spacing={4}>
+          </Center> */}
+          {/* <SimpleGrid columns={[1, 2, 3]} px={4} spacing={4}>
             {others
               .filter((other) => {
                 if (selected === "All") {
@@ -162,7 +162,7 @@ export default function Projects({ color }) {
                   </Card>
                 </Fade>
               ))}
-          </SimpleGrid>
+          </SimpleGrid> */}
         </Stack>
       </Container>
     </>

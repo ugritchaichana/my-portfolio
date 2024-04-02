@@ -76,26 +76,6 @@ export default function Header({ color }) {
             >
               Contact Me
             </Button>
-            <Box>
-              <Icon
-                as={Arrow}
-                color={useColorModeValue("gray.800", "gray.300")}
-                w={71}
-                position={"absolute"}
-                right={-71}
-                top={"20px"}
-              />
-              <Text
-                fontSize={"lg"}
-                fontFamily={"Caveat"}
-                position={"absolute"}
-                right={"-85px"}
-                top={"-5px"}
-                transform={"rotate(10deg)"}
-              >
-                Click me!
-              </Text>
-            </Box>
           </Stack>
         </Stack>
       </Container>
