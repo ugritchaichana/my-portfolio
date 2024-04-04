@@ -28,7 +28,7 @@ export default function Education({ color }) {
       setSelected(options[0].value);
     }
   }, [options]);
-  
+
   const handleSelected = (value) => {
     setSelected(value);
   };
@@ -45,7 +45,7 @@ export default function Education({ color }) {
           <Stack align="center" direction="row" px={4}>
             <HStack mx={4}>
               <Text color={`${color}.400`} fontWeight={800}>
-                02
+                03
               </Text>
               <Text fontWeight={800}>Education</Text>
             </HStack>

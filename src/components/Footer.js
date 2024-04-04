@@ -12,13 +12,10 @@ export default function Footer() {
       bg={useColorModeValue("gray.50", "gray.900")}
       color={useColorModeValue("gray.700", "gray.200")}
     >
-      <Container
-        as={Stack}
-        maxW={"6xl"}
-        py={4}
-        align="center"
-      >
-        <Text>© 2023 Ugrit Chaichana. All rights reserved</Text>
+      <Container as={Stack} maxW={"6xl"} py={4} align="center">
+        <Text>
+          © 2024 Ugrit Chaichana. This work is the property of Ugrit Chaichana.
+        </Text>
       </Container>
     </Box>
   );
