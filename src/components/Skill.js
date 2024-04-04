@@ -7,7 +7,6 @@ import {
   HStack,
   Card,
   CardBody,
-  VStack,
 } from "@chakra-ui/react";
 import { Fade } from "react-reveal";
 import {
@@ -104,22 +103,20 @@ export default function Skill({ color }) {
             alignItems="center"
             justifyContent="center"
           >
-            <HStack>
-              <SkillCard
-                icon={<FaPhp style={{ marginRight: "10px" }} size={30} />}
-                text="PHP"
-              />
-              <SkillCard
-                icon={<FaJava style={{ marginRight: "10px" }} size={30} />}
-                text="Java"
-              />
-              <SkillCard
-                icon={
-                  <SiMicrosoftazure style={{ marginRight: "10px" }} size={30} />
-                }
-                text="Azure"
-              />
-            </HStack>
+            <SkillCard
+              icon={<FaPhp style={{ marginRight: "10px" }} size={30} />}
+              text="PHP"
+            />
+            <SkillCard
+              icon={<FaJava style={{ marginRight: "10px" }} size={30} />}
+              text="Java"
+            />
+            <SkillCard
+              icon={
+                <SiMicrosoftazure style={{ marginRight: "10px" }} size={30} />
+              }
+              text="Azure"
+            />
           </Stack>
         </Stack>
       </Container>

@@ -32,6 +32,7 @@ export default function Nav({ color }) {
     red: "#E53E3E",
     teal: "#319795",
     yellow: "#D69E2E",
+    don: "#24F017",
   };
   const [scroll, setScroll] = useState(false);
   const { colorMode, toggleColorMode } = useColorMode();
