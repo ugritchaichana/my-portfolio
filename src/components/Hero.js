@@ -5,19 +5,19 @@ import {
   Text,
   Button,
   Stack,
-  createIcon,
   Modal,
   ModalOverlay,
   ModalContent,
   ModalHeader,
   ModalFooter,
-  ModalBody,
   ModalCloseButton,
   useDisclosure,
   Image,
+  HStack,
 } from "@chakra-ui/react";
 import ProfileArray from "./ProfileArray";
 import imgResume from "./img/Ugrit_Resume.png";
+import imgTranscript from "./img/Ugrit_Transcript.jpg";
 
 export default function Header({ color }) {
   const profile = ProfileArray();
@@ -25,6 +25,7 @@ export default function Header({ color }) {
     const contactSection = document.querySelector("#contact");
     contactSection.scrollIntoView({ behavior: "smooth" });
   };
+
   return (
     <>
       <Heading>
@@ -65,7 +66,10 @@ export default function Header({ color }) {
             alignSelf={"center"}
             position={"relative"}
           >
-            <ModalResume />
+            <HStack>
+              <ModalResume />
+              <ModalTranscript />
+            </HStack>
             <Button
               variant={"link"}
               colorScheme={"blue"}
@@ -81,22 +85,57 @@ export default function Header({ color }) {
   );
 }
 
+function ModalTranscript() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const transcript_dl = () => {
+    window.location.href = `https://drive.google.com/uc?export=download&id=1mPui2TficTuLCsAIYBevNMOpZf-ol4AR`;
+  };
+
+  return (
+    <>
+      <Stack direction="row" spacing={3}>
+        <Button onClick={onOpen} colorScheme="purple" variant="solid">
+          Transcript
+        </Button>
+      </Stack>
+
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent w="500px">
+          <ModalHeader>Transcript</ModalHeader>
+          <ModalCloseButton />
+          <Box>
+            <Image src={imgTranscript} maxW="100%" />
+          </Box>
+          <ModalFooter>
+            <Button colorScheme="purple" mr={3} onClick={transcript_dl}>
+              Download
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
+  );
+}
+
 function ModalResume() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const resume_dl = () => {
     window.location.href = `https://drive.google.com/uc?export=download&id=1mPui2TficTuLCsAIYBevNMOpZf-ol4AR`;
   };
+
   return (
     <>
-      <Button onClick={onOpen} colorScheme="purple" variant="solid">
-        Resume
-      </Button>
+      <Stack direction="row" spacing={3}>
+        <Button onClick={onOpen} colorScheme="purple" variant="solid">
+          Resume
+        </Button>
+      </Stack>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent w="500px">
           <ModalHeader>Resume</ModalHeader>
           <ModalCloseButton />
-          <ModalBody></ModalBody>
           <Box>
             <Image src={imgResume} maxW="100%" />
           </Box>

@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react"; // เพิ่ม import useState, useEffect
 import {
   Flex,
   Button,
@@ -15,7 +16,6 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon, HamburgerIcon } from "@chakra-ui/icons";
-import { useState } from "react";
 import ProfileArray from "./ProfileArray";
 const TbIcons = require("react-icons/tb");
 
@@ -72,7 +72,13 @@ export default function Nav({ color }) {
       ? setScroll(true)
       : setScroll(false);
 
-  window.addEventListener("scroll", changeScroll);
+  useEffect(() => {
+    // เพิ่ม useEffect
+    window.addEventListener("scroll", changeScroll);
+    return () => {
+      window.removeEventListener("scroll", changeScroll);
+    };
+  }, []);
 
   const TbLetterComponents = [];
 

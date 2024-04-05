@@ -29,10 +29,6 @@ export default function Education({ color }) {
     }
   }, [options]);
 
-  const handleSelected = (value) => {
-    setSelected(value);
-  };
-
   return (
     <>
       <Container maxW={"3xl"} id="education">
@@ -54,45 +50,57 @@ export default function Education({ color }) {
           <Stack px={4} spacing={4}>
             {education
               .filter((exp) => exp.tags.includes(selected))
-              .map((exp,i) => (
+              .map((exp, i) => (
                 <Fade bottom key={exp.company}>
                   <>
-                  <Card size="sm">
-                    <CardHeader>
-                      <Flex justifyContent="space-between">
-                        <HStack>
-                          <Image src={KMUTNB_LOGO} h={59} />
-                          <Box px={2} align="left">
-                            <Text fontWeight={600}>King Monkut's Unversity of Technology</Text>
-                            <Text fontWeight={600}>North Bangkok</Text>
-                            <Text>Electronics Computer Technology</Text>
-                            <Badge variant='solid' colorScheme='green'>Bachelor</Badge>
-                          </Box>
-                        </HStack>
-                        <Text px={2} fontWeight={300}>
-                          2022 - Present
-                        </Text>
-                      </Flex>
-                    </CardHeader>
+                    <Card size="sm">
+                      <CardHeader>
+                        <Flex justifyContent="space-between">
+                          <HStack>
+                            <Image src={KMUTNB_LOGO} h={59} />
+                            <Box px={2} align="left">
+                              <Text fontWeight={600}>
+                                King Monkut's Unversity of Technology
+                              </Text>
+                              <Text fontWeight={600}>North Bangkok</Text>
+                              <Text>Electronics Computer Technology</Text>
+                              <Badge variant="solid" colorScheme="green">
+                                Bachelor
+                              </Badge>
+                            </Box>
+                          </HStack>
+                          <Text px={2} fontWeight={300}>
+                            2022 - Present
+                          </Text>
+                        </Flex>
+                      </CardHeader>
                     </Card>
                     <br />
                     <Card size="sm">
-                    <CardHeader>
-                      <Flex justifyContent="space-between">
-                        <HStack>
-                          <Image src={TNC_LOGO} h={59} />
-                          <Box px={2} align="left">
-                            <Text fontWeight={600}>{"Chanthaburi Technical College"}</Text>
-                            <Text>{"Technology Computer"}</Text>
-                            <Badge variant='solid' colorScheme='green'>Voc. Cert.</Badge>&nbsp;
-                            <Badge variant='solid' colorScheme='green'>High Voc. Cert.</Badge>&nbsp;
-                          </Box>
-                        </HStack>
-                        <Text px={2} fontWeight={300}>
-                          {"2017 - 2022"}
-                        </Text>
-                      </Flex>
-                    </CardHeader>
+                      <CardHeader>
+                        <Flex justifyContent="space-between">
+                          <HStack>
+                            <Image src={TNC_LOGO} h={59} />
+                            <Box px={2} align="left">
+                              <Text fontWeight={600}>
+                                {"Chanthaburi Technical College"}
+                              </Text>
+                              <Text>{"Technology Computer"}</Text>
+                              <Badge variant="solid" colorScheme="green">
+                                Voc. Cert.
+                              </Badge>
+                              &nbsp;
+                              <Badge variant="solid" colorScheme="green">
+                                High Voc. Cert.
+                              </Badge>
+                              &nbsp;
+                            </Box>
+                          </HStack>
+                          <Text px={2} fontWeight={300}>
+                            {"2017 - 2022"}
+                          </Text>
+                        </Flex>
+                      </CardHeader>
                     </Card>
                   </>
                 </Fade>
