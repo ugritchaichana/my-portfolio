@@ -49,7 +49,7 @@ function App() {
       <Projects color={color} />
       <Contact color={color} />
       <Footer />
-      <Box
+      {/* <Box
         position="fixed"
         top="50%"
         right="0"
@@ -72,14 +72,14 @@ function App() {
           Contact
         </Button>
       </Box>
-
+      
       <div onClick={handleOutsideClick}>
         <ContactForm
           isOpen={isOpen}
           slideRef={slideRef}
           handleOutsideClick={handleOutsideClick}
         />
-      </div>
+      </div> */}
     </ChakraProvider>
   );
 }

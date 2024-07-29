@@ -73,7 +73,6 @@ export default function Nav({ color }) {
       : setScroll(false);
 
   useEffect(() => {
-    // เพิ่ม useEffect
     window.addEventListener("scroll", changeScroll);
     return () => {
       window.removeEventListener("scroll", changeScroll);

@@ -16,7 +16,7 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import ProfileArray from "./ProfileArray";
-import imgResume from "./img/Ugrit_Resume.png";
+import imgResume from "./img/Ugrit_Chaichana_Resume.png";
 import imgTranscript from "./img/Ugrit_Transcript.jpg";
 
 export default function Header({ color }) {
@@ -121,7 +121,8 @@ function ModalTranscript() {
 function ModalResume() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const resume_dl = () => {
-    window.location.href = `https://drive.google.com/uc?export=download&id=1mPui2TficTuLCsAIYBevNMOpZf-ol4AR`;
+    // window.location.href = `https://drive.google.com/uc?export=download&id=1mPui2TficTuLCsAIYBevNMOpZf-ol4AR`;
+    window.location.href = `https://drive.google.com/uc?export=download&id=1QEVIShVskcif1RDDJHp9Db_uboqCWNTD`;
   };
 
   return (

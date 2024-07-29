@@ -10,14 +10,29 @@ import {
 } from "@chakra-ui/react";
 import { Fade } from "react-reveal";
 import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
   FaBootstrap,
-  FaJava,
-  FaPhp,
+  FaLaravel,
+  FaGit,
+  FaReact
 } from "react-icons/fa";
-import { SiTailwindcss, SiChakraui, SiMicrosoftazure } from "react-icons/si";
+import {
+  SiChakraui,
+  SiMicrosoftazure,
+  SiCodeigniter,
+  SiTypescript,
+  SiDjango,
+  SiMicrosoftsqlserver,
+  SiPostgresql,
+  SiMongodb,
+  SiPostman,
+} from "react-icons/si";
+import {
+  GrMysql
+} from "react-icons/gr";
+import {
+  DiGoogleCloudPlatform
+} from "react-icons/di";
+
 
 const SkillCard = ({ icon, text }) => (
   <Fade bottom distance="100px">
@@ -25,8 +40,8 @@ const SkillCard = ({ icon, text }) => (
       width="150px"
       height="auto"
       _hover={{
-        boxShadow: "0px 0px 20px rgba(220, 220, 220, 0.7)", // เพิ่มเรืองแสงสีข้าวเมื่อ hover
-        transition: "box-shadow 0.3s ease", // เพิ่มเอฟเฟกต์ transition เมื่อ hover
+        boxShadow: "0px 0px 20px rgba(220, 220, 220, 0.7)",
+        transition: "box-shadow 0.3s ease",
       }}
     >
       <CardBody display="flex" alignItems="center" justifyContent="center">
@@ -47,15 +62,17 @@ export default function Skill({ color }) {
           spacing={{ base: 8, md: 14 }}
           pb={{ base: 20, md: 36 }}
         >
+
           <Stack align="center" direction="row" px={4}>
             <HStack mx={4}>
               <Text color={`${color}.400`} fontWeight={800}>
                 02
               </Text>
-              <Text fontWeight={800}>Skill</Text>
+              <Text fontWeight={800}>Stack/Tools</Text>
             </HStack>
             <Divider orientation="horizontal" />
           </Stack>
+
           <Stack
             px={4}
             spacing={15}
@@ -64,18 +81,19 @@ export default function Skill({ color }) {
             justifyContent="center"
           >
             <SkillCard
-              icon={<FaHtml5 style={{ marginRight: "10px" }} size={30} />}
-              text="HTML"
+              icon={<FaLaravel style={{ marginRight: "10px" }} size={30} />}
+              text="Laravel"
             />
             <SkillCard
-              icon={<FaCss3Alt style={{ marginRight: "10px" }} size={30} />}
-              text="CSS"
+              icon={<SiCodeigniter style={{ marginRight: "10px" }} size={30} />}
+              text="CodeIgniter"
             />
             <SkillCard
-              icon={<FaJs style={{ marginRight: "10px" }} size={30} />}
-              text="Javascript"
+              icon={<SiTypescript style={{ marginRight: "10px" }} size={30} />}
+              text="TypeScript"
             />
           </Stack>
+
           <Stack
             px={4}
             spacing={15}
@@ -83,19 +101,20 @@ export default function Skill({ color }) {
             alignItems="center"
             justifyContent="center"
           >
+            <SkillCard
+              icon={<FaReact style={{ marginRight: "10px" }} size={30} />}
+              text="React"
+            />
+            <SkillCard
+              icon={<SiDjango style={{ marginRight: "10px" }} size={30} />}
+              text="Django"
+            />
             <SkillCard
               icon={<FaBootstrap style={{ marginRight: "10px" }} size={30} />}
               text="Bootstrap"
             />
-            <SkillCard
-              icon={<SiTailwindcss style={{ marginRight: "10px" }} size={30} />}
-              text="Tailwind"
-            />
-            <SkillCard
-              icon={<SiChakraui style={{ marginRight: "10px" }} size={30} />}
-              text="Chakra UI"
-            />
           </Stack>
+
           <Stack
             px={4}
             spacing={15}
@@ -104,18 +123,62 @@ export default function Skill({ color }) {
             justifyContent="center"
           >
             <SkillCard
-              icon={<FaPhp style={{ marginRight: "10px" }} size={30} />}
-              text="PHP"
+              icon={<SiChakraui style={{ marginRight: "10px" }} size={30} />}
+              text="Chakra UI"
             />
             <SkillCard
-              icon={<FaJava style={{ marginRight: "10px" }} size={30} />}
-              text="Java"
+              icon={<GrMysql style={{ marginRight: "10px" }} size={30} />}
+              text="MySQL"
             />
             <SkillCard
               icon={
-                <SiMicrosoftazure style={{ marginRight: "10px" }} size={30} />
+                <SiMicrosoftsqlserver style={{ marginRight: "10px" }} size={30} />
               }
+              text="SQL SRV"
+            />
+          </Stack>
+
+          <Stack
+            px={4}
+            spacing={15}
+            direction="row"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <SkillCard
+              icon={
+                <SiPostgresql style={{ marginRight: "10px" }} size={30} />
+              }
+              text="PostgreSQL"
+            />
+            <SkillCard
+              icon={<SiMongodb style={{ marginRight: "10px" }} size={30} />}
+              text="MongoDB"
+            />
+            <SkillCard
+              icon={<SiPostman style={{ marginRight: "10px" }} size={30} />}
+              text="Postman"
+            />
+          </Stack>
+          
+          <Stack
+            px={4}
+            spacing={15}
+            direction="row"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <SkillCard
+              icon={<DiGoogleCloudPlatform style={{ marginRight: "10px" }} size={30} />}
+              text="GCP"
+            />
+            <SkillCard
+              icon={<SiMicrosoftazure style={{ marginRight: "10px" }} size={30} />}
               text="Azure"
+            />
+            <SkillCard
+              icon={<FaGit style={{ marginRight: "10px" }} size={30} />}
+              text="GIT"
             />
           </Stack>
         </Stack>

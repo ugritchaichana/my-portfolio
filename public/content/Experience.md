@@ -1,3 +1,13 @@
+## DEV
+- *SNC Former PCL (Internship)* | February 2021 - March 2021
+- ![logo512](../assets/SNC_logo.png)
+- Tags: DEV
+- Badges:
+  - Rayong [blue]
+- List Items:
+  - Assistant Production Engineer
+  - Production Line Worker
+
 ## Maintenance Technician
 - *SNC Former PCL (Internship)* | February 2021 - March 2021
 - ![logo512](../assets/SNC_logo.png)
@@ -28,4 +38,3 @@
 - List Items:
   - Computer Technician
   - Salesman
-
