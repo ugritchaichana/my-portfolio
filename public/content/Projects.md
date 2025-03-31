@@ -12,8 +12,8 @@
   - GCP [gray]
 - Buttons:
   - Website [https://goldpredictect.web.app/]
-  - Frontend [https://github.com/ugritchaichana/Gold-Predict-Web-FE/]
-  - Backend [https://github.com/ugritchaichana/Gold-Predict-Web-BE/]
+  - Github Frontend [https://github.com/ugritchaichana/Gold-Predict-Web-FE/]
+  - Github Backend [https://github.com/ugritchaichana/Gold-Predict-Web-BE/]
 
 ## Website Portfolio
 
