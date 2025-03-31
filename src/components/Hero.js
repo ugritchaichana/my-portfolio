@@ -16,8 +16,8 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import ProfileArray from "./ProfileArray";
-import imgResume from "./img/Ugrit_Chaichana_Resume.png";
-import imgTranscript from "./img/Ugrit_Transcript.jpg";
+import imgResume from "./img/Ugrit_Chaichana_Resume.webp";
+import imgTranscript from "./img/Ugrit_Chaichana_Transcript.webp";
 
 export default function Header({ color }) {
   const profile = ProfileArray();

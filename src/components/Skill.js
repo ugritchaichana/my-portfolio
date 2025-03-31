@@ -25,6 +25,9 @@ import {
   SiPostgresql,
   SiMongodb,
   SiPostman,
+  SiRadixui,
+  SiTailwindcss,
+  SiTensorflow,
 } from "react-icons/si";
 import {
   GrMysql
@@ -56,13 +59,7 @@ export default function Skill({ color }) {
   return (
     <>
       <Container maxW={"3xl"} id="skill">
-        <Stack
-          as={Box}
-          textAlign={"center"}
-          spacing={{ base: 8, md: 14 }}
-          pb={{ base: 20, md: 36 }}
-        >
-
+        <Stack as={Box} textAlign={"center"} spacing={{ base: 8, md: 14 }} pb={{ base: 20, md: 36 }} >
           <Stack align="center" direction="row" px={4}>
             <HStack mx={4}>
               <Text color={`${color}.400`} fontWeight={800}>
@@ -73,113 +70,32 @@ export default function Skill({ color }) {
             <Divider orientation="horizontal" />
           </Stack>
 
-          <Stack
-            px={4}
-            spacing={15}
-            direction="row"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <SkillCard
-              icon={<FaLaravel style={{ marginRight: "10px" }} size={30} />}
-              text="Laravel"
-            />
-            <SkillCard
-              icon={<SiCodeigniter style={{ marginRight: "10px" }} size={30} />}
-              text="CodeIgniter"
-            />
-            <SkillCard
-              icon={<SiTypescript style={{ marginRight: "10px" }} size={30} />}
-              text="TypeScript"
-            />
+          <Stack  px={4} spacing={15} direction="row" alignItems="center" justifyContent="center" >
+            <SkillCard icon={<SiDjango style={{ marginRight: "10px" }} size={30} />} text="Django" />
+            <SkillCard icon={<SiTypescript style={{ marginRight: "10px" }} size={30} />} text="TypeScript" />
+            <SkillCard icon={<FaLaravel style={{ marginRight: "10px" }} size={30} />} text="Laravel" />
+            <SkillCard icon={<SiCodeigniter style={{ marginRight: "10px" }} size={30} />} text="CodeIgniter" />
           </Stack>
 
-          <Stack
-            px={4}
-            spacing={15}
-            direction="row"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <SkillCard
-              icon={<FaReact style={{ marginRight: "10px" }} size={30} />}
-              text="React"
-            />
-            <SkillCard
-              icon={<SiDjango style={{ marginRight: "10px" }} size={30} />}
-              text="Django"
-            />
-            <SkillCard
-              icon={<FaBootstrap style={{ marginRight: "10px" }} size={30} />}
-              text="Bootstrap"
-            />
+          <Stack px={4} spacing={15} direction="row" alignItems="center" justifyContent="center">
+            <SkillCard icon={<FaReact style={{ marginRight: "10px" }} size={30} />} text="React" />
+            <SkillCard icon={<SiRadixui style={{ marginRight: "10px" }} size={30} />} text="Radix UI" />
+            <SkillCard icon={<SiChakraui style={{ marginRight: "10px" }} size={30} />} text="Chakra UI" />
+            <SkillCard icon={<SiTailwindcss style={{ marginRight: "10px" }} size={30} />} text="Tailwind" />
           </Stack>
 
-          <Stack
-            px={4}
-            spacing={15}
-            direction="row"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <SkillCard
-              icon={<SiChakraui style={{ marginRight: "10px" }} size={30} />}
-              text="Chakra UI"
-            />
-            <SkillCard
-              icon={<GrMysql style={{ marginRight: "10px" }} size={30} />}
-              text="MySQL"
-            />
-            <SkillCard
-              icon={
-                <SiMicrosoftsqlserver style={{ marginRight: "10px" }} size={30} />
-              }
-              text="SQL SRV"
-            />
-          </Stack>
-
-          <Stack
-            px={4}
-            spacing={15}
-            direction="row"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <SkillCard
-              icon={
-                <SiPostgresql style={{ marginRight: "10px" }} size={30} />
-              }
-              text="PostgreSQL"
-            />
-            <SkillCard
-              icon={<SiMongodb style={{ marginRight: "10px" }} size={30} />}
-              text="MongoDB"
-            />
-            <SkillCard
-              icon={<SiPostman style={{ marginRight: "10px" }} size={30} />}
-              text="Postman"
-            />
+          <Stack px={4} spacing={15} direction="row" alignItems="center" justifyContent="center">
+            <SkillCard icon={<FaBootstrap style={{ marginRight: "10px" }} size={30} />} text="Bootstrap" />
+            <SkillCard icon={<SiPostgresql style={{ marginRight: "10px" }} size={30} />} text="PostgreSQL" />
+            <SkillCard icon={<SiMongodb style={{ marginRight: "10px" }} size={30} />} text="MongoDB" />
+            <SkillCard icon={<GrMysql style={{ marginRight: "10px" }} size={30} />} text="MySQL" />
           </Stack>
           
-          <Stack
-            px={4}
-            spacing={15}
-            direction="row"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <SkillCard
-              icon={<DiGoogleCloudPlatform style={{ marginRight: "10px" }} size={30} />}
-              text="GCP"
-            />
-            <SkillCard
-              icon={<SiMicrosoftazure style={{ marginRight: "10px" }} size={30} />}
-              text="Azure"
-            />
-            <SkillCard
-              icon={<FaGit style={{ marginRight: "10px" }} size={30} />}
-              text="GIT"
-            />
+          <Stack px={4} spacing={15} direction="row" alignItems="center" justifyContent="center">
+            <SkillCard icon={<DiGoogleCloudPlatform style={{ marginRight: "10px" }} size={30} />} text="GCP" />
+            <SkillCard icon={<SiMicrosoftazure style={{ marginRight: "10px" }} size={30} />} text="Azure" />
+            <SkillCard icon={<FaGit style={{ marginRight: "10px" }} size={30} />} text="GIT" />
+            <SkillCard icon={<SiTensorflow style={{ marginRight: "10px" }} size={30} />} text="TensorFlow" />
           </Stack>
         </Stack>
       </Container>
