@@ -5,9 +5,37 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Prevent horizontal scrolling on mobile */
+  scroll-padding-top: 80px; /* Add padding for fixed header */
+}
+
+html {
+  overflow-x: hidden; /* Prevent horizontal scrolling on mobile */
+  scroll-behavior: smooth; /* Smooth scrolling for a better user experience */
+  scroll-padding-top: 80px; /* Add padding for fixed header */
+}
+
+/* For Safari support */
+@supports (-webkit-overflow-scrolling: touch) {
+  html, body {
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Improve tap targets on mobile */
+a, button {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 480px) {
+  a, button {
+    font-size: 16px; /* Ensure text is readable without zooming */
+  }
 }

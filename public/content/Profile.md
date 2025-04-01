@@ -1,20 +1,25 @@
-## Site Name
-- Ugrit Portfolio
+# Ugrit Chaichana
 
-## Header
-- Hello, I'm Ugrit Chaichana
-- Electronics Computer
-- I'm interested in computer jobs such as Full-stack, Machine Learning, Cloud Computing, DevOps Engineer and Data Engineer.
+## Full-Stack Developer
 
-## About
-Driven by a passion for technology, I am a highly motivated and creative individual with a strong interest in learning and exploring all aspects of the computer field. My strengths lie in my positive thinking and creative problem-solving abilities. I thrive in challenging environments, possess natural leadership qualities, and am always eager to embrace new opportunities and continuously learn new skills.
+![Profile Image](../assets/webport.png)
 
-## Contact
+## About Me
+I am a dedicated Full-Stack Developer with a strong background in computer. My passion lies in developing innovative web solutions and applications that solve real-world problems. With experience in both front-end and back-end development, I bring a comprehensive approach to software projects.
 
-- LinkedIn: https://www.linkedin.com/in/ugrit-chaichana-booth13092001
-- GitHub: https://github.com/Boothza001
-- Email: ugritchaichana13@gmail.com
-- Tel: +66 63 6375191
+## Key Skills
+- Front-end Development: React.js, JavaScript, HTML5, CSS3
+- Back-end Development: Laravel, CodeIgniter, Node.js
+- Programming Languages: TypeScript, Python, Java, C/C++
+- Database Management: MySQL, MongoDB, PostgreSQL
+- Tools & Methodologies: Git, Agile/Scrum, RESTful APIs
 
-## Logo
-- UGRIT
+## Contact Information
+- **Email:** ugritchaichana13@gmail.com
+- **Location:** Bangkok, Thailand
+- **LinkedIn:** [linkedin.com/in/ugrit-chaichana-booth13092001](https://www.linkedin.com/in/ugrit-chaichana-booth13092001/)
+- **GitHub:** [github.com/ugritchaichana](https://github.com/ugritchaichana)
+
+
+## Professional Summary
+Motivated Electronic Computer Technology graduate with hands-on experience in full-stack web development.

@@ -14,7 +14,19 @@ const parseExperience = (mdContent) => {
         .split("|")
         .map((s) => s.trim());
       const position = positionLine[0].slice(1, -1);
-      const duration = positionLine[1].trim();
+      
+      const durationPart = positionLine[1].trim();
+      let fullDuration, shortDuration;
+      
+      const durationMatch = durationPart.match(/(.*)\s+\[(.*)\]/);
+      if (durationMatch) {
+        fullDuration = durationMatch[1].trim();
+        shortDuration = durationMatch[2].trim();
+      } else {
+        fullDuration = durationPart;
+        shortDuration = durationPart;
+      }
+      
       const imageLine = lines[++i];
       const image = imageLine.match(/!\[(.*)\]\((.*)\)/)[2];
       const tags = lines[++i].split(":")[1].trim();
@@ -37,7 +49,8 @@ const parseExperience = (mdContent) => {
         image,
         company,
         position,
-        duration,
+        fullDuration,
+        shortDuration,
         badges,
         listItems,
         tags,

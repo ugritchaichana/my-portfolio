@@ -4,11 +4,11 @@
 - Tags: Website
 - Badges:
   - React [blue]
+  - Django [green]
+  - Tensorflow [orange]
   - Chart js [red]
   - Radix UI [purple]
-  - Django [green]
   - PostgreSQL [blue]
-  - Tensorflow [orange]
   - GCP [gray]
 - Buttons:
   - Website [https://goldpredictect.web.app/]
@@ -23,7 +23,7 @@
   - React [blue]
   - Chakra UI [teal]
 - Buttons:
-  - Website [https://ugrit-portfolio-beta.vercel.app/]
+  - Website [https://ugrit-chaichana.vercel.app/]
   - Github [https://github.com/ugritchaichana/my-portfolio/]
 
 

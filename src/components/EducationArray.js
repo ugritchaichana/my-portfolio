@@ -17,20 +17,34 @@ const parseEducation = (mdContent) => {
       const duration = positionLine[1].trim();
       const imageLine = lines[++i];
       const image = imageLine.match(/!\[(.*)\]\((.*)\)/)[2];
-      const tags = lines[++i].split(":")[1].trim();
+      const tagsLine = lines[++i];
+      const tagsText = tagsLine.split(":")[1] ? tagsLine.split(":")[1].trim() : "";
+      const tags = tagsText.split(", ").map(tag => tag.trim()).filter(tag => tag !== "");
+      
       const badges = [];
       const listItems = [];
 
-      while (lines[++i] && !lines[i].startsWith("- Badges:")) {}
-      while (lines[++i] && lines[i].startsWith("  - ")) {
-        const badgeLine = lines[i].substr(4).split("[");
-        const badgeName = badgeLine[0].trim();
-        const badgeColor = badgeLine[1].split("]")[0].trim();
-        badges.push({ name: badgeName, colorScheme: badgeColor });
-      }
-
-      while (lines[++i] && lines[i].startsWith("  - ")) {
-        listItems.push(lines[i].substr(4));
+      while (i + 1 < lines.length && !lines[i + 1].startsWith("## ")) {
+        i++;
+        
+        if (lines[i].startsWith("- Badges:")) {
+          while (i + 1 < lines.length && lines[i + 1].startsWith("  - ")) {
+            i++;
+            const badgeLine = lines[i].substr(4).split("[");
+            const badgeName = badgeLine[0].trim();
+            const badgeColor = badgeLine[1] ? badgeLine[1].split("]")[0].trim() : "gray";
+            badges.push({ name: badgeName, colorScheme: badgeColor });
+          }
+        } else if (lines[i].startsWith("- List Items:")) {
+          while (i + 1 < lines.length && lines[i + 1].startsWith("  - ")) {
+            i++;
+            listItems.push(lines[i].substr(4));
+          }
+        }
+        
+        if (i + 1 < lines.length && lines[i + 1].startsWith("## ")) {
+          break;
+        }
       }
 
       education.push({
@@ -42,6 +56,10 @@ const parseEducation = (mdContent) => {
         listItems,
         tags,
       });
+      
+      if (i + 1 < lines.length && lines[i + 1].startsWith("## ")) {
+        i--;
+      }
     }
   }
 
@@ -60,7 +78,8 @@ const EducationArray = () => {
         return response.text();
       })
       .then((mdContent) => {
-        setEducation(parseEducation(mdContent));
+        const parsedEducation = parseEducation(mdContent);
+        setEducation(parsedEducation);
       })
       .catch((error) => {
         console.error("Error fetching markdown content:", error);
