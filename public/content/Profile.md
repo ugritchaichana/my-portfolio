@@ -16,8 +16,8 @@ I am a dedicated Full-Stack Developer with a strong background in computer. My p
 
 ## Contact Information
 - **Email:** ugritchaichana13@gmail.com
-- **Location:** Bangkok, Thailand
-- **LinkedIn:** [linkedin.com/in/ugrit-chaichana-booth13092001](https://www.linkedin.com/in/ugrit-chaichana-booth13092001/)
+- **Location:** Wong Sawang, บางซื่อ
+- **LinkedIn:** [linkedin.com/in/ugritchaichana-dev/](https://www.linkedin.com/in/ugritchaichana-dev/)
 - **GitHub:** [github.com/ugritchaichana](https://github.com/ugritchaichana)
 
 

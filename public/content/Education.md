@@ -5,7 +5,7 @@
 - ![KMUTNB](../assets/KMUTNB.png)
 - Tags: University
 - Badges:
-  - GPA: 2.70 [blue]
+  - GPA: 2.80 [blue]
 <!-- - List Example:
   - Developed strong foundations in computer systems, programming, and software development
   - Completed coursework in data structures, algorithms, database management, and web development
