@@ -16,15 +16,12 @@ import {
   useDisclosure,
   HStack,
   Link as ChakraLink,
-  Box,
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon, HamburgerIcon } from "@chakra-ui/icons";
-import ProfileArray from "./ProfileArray";
 import { Link } from "react-scroll";
 import * as Scroll from "react-scroll";
 
 export default function Nav({ color }) {
-  const profile = ProfileArray();
   const colors = {
     blue: "#3182CE",
     cyan: "#00B5D8",
@@ -44,7 +41,6 @@ export default function Nav({ color }) {
 
   const [isLargerThanMD] = useMediaQuery("(min-width: 48em)");
   
-  const scroller = Scroll.scroller;
   const animateScroll = Scroll.animateScroll;
   
   const scrollToTop = () => {

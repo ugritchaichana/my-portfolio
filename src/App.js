@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { ChakraProvider, Box, useDisclosure, CSSReset } from "@chakra-ui/react";
+import React from "react";
+import { ChakraProvider, Box, CSSReset } from "@chakra-ui/react";
 import Nav from "./components/NavBar";
 import Header from "./components/Hero";
 import About from "./components/About";
@@ -13,8 +13,6 @@ import theme from "./theme";
 
 function App() {
   const color = "purple";
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const slideRef = useRef();
 
   return (
     <ChakraProvider theme={theme}>

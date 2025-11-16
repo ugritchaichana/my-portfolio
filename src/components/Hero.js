@@ -14,11 +14,9 @@ import {
   useDisclosure,
   Image,
   HStack,
-  VStack,
   useBreakpointValue,
   IconButton,
   useColorModeValue,
-  Flex,
   Center,
 } from "@chakra-ui/react";
 import ProfileArray from "./ProfileArray";

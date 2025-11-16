@@ -8,64 +8,21 @@ import {
   Card,
   CardBody,
   CardHeader,
-  SimpleGrid,
   useBreakpointValue,
   Heading,
   VStack,
-  useColorModeValue,
   Flex,
   Wrap,
   WrapItem,
   Badge,
 } from "@chakra-ui/react";
 import FadeIn from "./FadeIn";
-import { useState, useEffect } from "react";
 import SkillArray from "./SkillArray";
 
 import * as FaIcons from "react-icons/fa";
 import * as SiIcons from "react-icons/si";
 import * as GrIcons from "react-icons/gr";
 import * as DiIcons from "react-icons/di";
-
-const SkillCard = ({ icon, text, cardWidth }) => (
-  <FadeIn>
-    <Card
-      width={cardWidth}
-      height="100%"
-      borderRadius="lg"
-      boxShadow="md"
-      _hover={{
-        transform: "translateY(-5px)",
-        transition: "transform 0.3s ease",
-        boxShadow: "xl"
-      }}
-    >
-      <CardBody 
-        display="flex" 
-        alignItems="center" 
-        justifyContent="center"
-        flexDirection={{ base: "column", sm: "column" }}
-        py={4}
-        px={3}
-        gap={3}
-        textAlign="center"
-      >
-        <Box 
-          fontSize={{ base: "2xl", md: "3xl" }}
-          color="purple.500"
-        >
-          {icon}
-        </Box>
-        <Text 
-          fontWeight="medium"
-          fontSize={{ base: "sm", md: "md" }}
-        >
-          {text}
-        </Text>
-      </CardBody>
-    </Card>
-  </FadeIn>
-);
 
 const OverviewCategoryCard = ({ title, skills, icon, color, cardWidth }) => (
   <FadeIn>
@@ -121,8 +78,6 @@ const OverviewCategoryCard = ({ title, skills, icon, color, cardWidth }) => (
 export default function Skill({ color }) {
   const { categories, skills } = SkillArray();
   const cardWidth = useBreakpointValue({ base: "xs", md: "2xl" });
-  
-  const headingColor = `${color}.400`;
 
   const getIcon = (iconName) => {
     const iconLibs = {

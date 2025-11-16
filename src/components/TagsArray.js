@@ -23,7 +23,7 @@ const parseTags = (mdContent) => {
       const tagContent = line.substr(2);
       
       if (tagContent.includes(':')) {
-        const [label, description] = tagContent.split(':').map(s => s.trim());
+        const [label] = tagContent.split(':').map(s => s.trim());
         tags.push({
           value: label,
           label: label

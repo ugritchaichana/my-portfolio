@@ -26,10 +26,9 @@ import {
 } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import FadeIn from "./FadeIn";
-import SynerryLogo from './img/Synerry Logo.png';
 import { useState, useEffect } from "react";
 import ExperienceArray from "./ExperienceArray";
-import { BsFillBriefcaseFill, BsCalendar4Week } from "react-icons/bs";
+import { BsCalendar4Week } from "react-icons/bs";
 import { FaMapMarkerAlt, FaUserTie, FaTools, FaGraduationCap } from "react-icons/fa";
 
 export default function Experience({ color }) {
@@ -39,7 +38,6 @@ export default function Experience({ color }) {
 
   const flexDirection = useBreakpointValue({ base: "column", md: "row" });
   const textAlign = useBreakpointValue({ base: "left", md: "left" });
-  const dateAlign = useBreakpointValue({ base: "left", md: "right" });
   const badgeSize = useBreakpointValue({ base: "2xs", md: "xs" });
   const cardGap = useBreakpointValue({ base: 4, md: 6 });
   

@@ -21,11 +21,9 @@ import {
   VStack,
   Heading,
   useColorModeValue,
-  Hide,
-  Show,
 } from "@chakra-ui/react";
-import { ChevronRightIcon } from "@chakra-ui/icons";
 import { useState, useEffect } from "react";
+import { ChevronRightIcon } from "@chakra-ui/icons";
 import EducationArray from "./EducationArray";
 import TagsArray from "./TagsArray";
 import FadeIn from "./FadeIn";
@@ -40,10 +38,8 @@ export default function Education({ color }) {
 
   const flexDirection = useBreakpointValue({ base: "column", md: "row" });
   const textAlign = useBreakpointValue({ base: "left", md: "left" });
-  const dateAlign = useBreakpointValue({ base: "left", md: "right" });
   const badgeSize = useBreakpointValue({ base: "2xs", md: "xs" });
   const cardGap = useBreakpointValue({ base: 4, md: 6 });
-  const logoSize = useBreakpointValue({ base: "60px", md: "80px" });
   
   const cardWidth = useBreakpointValue({ base: "xs", md: "2xl" });
   

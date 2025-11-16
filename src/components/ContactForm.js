@@ -46,9 +46,7 @@ const ContactForm = ({ isOpen, slideRef, handleOutsideClick }) => {
     return isValid;
   };
 
-  const handleChange = (e, field) => {
-    const value = e.target.value;
-
+  const handleChange = (_, field) => {
     setErrors((prevErrors) => ({
       ...prevErrors,
       [field]: false,

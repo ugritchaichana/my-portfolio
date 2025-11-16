@@ -14,7 +14,6 @@ import {
   Flex,
   SimpleGrid,
   useBreakpointValue,
-  CardHeader,
   VStack,
   Wrap,
   WrapItem,
@@ -29,7 +28,6 @@ const ProjectCard = ({ project, color, cardWidth, badgeSize }) => {
     `linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8))`
   );
   const cardBg = useColorModeValue('white', 'gray.800');
-  const headingColor = useColorModeValue(`${color}.600`, `${color}.300`);
   
   return (
     <FadeIn>

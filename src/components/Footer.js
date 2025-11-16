@@ -4,11 +4,8 @@ import {
   Stack,
   Text,
   useColorModeValue,
-  Link,
   HStack,
-  Icon,
 } from "@chakra-ui/react";
-import { FaHeart } from "react-icons/fa";
 
 export default function Footer() {
   return (
